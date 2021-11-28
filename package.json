@@ -5,10 +5,12 @@
   "dependencies": {
     "@emotion/react": "^11.7.0",
     "@emotion/styled": "^11.6.0",
+    "@hookform/resolvers": "^2.8.3",
     "@metamask/providers": "^8.1.1",
     "@mui/icons-material": "^5.2.0",
     "@mui/lab": "^5.0.0-alpha.57",
     "@mui/material": "^5.2.1",
+    "@snapshot-labs/snapshot.js": "^0.3.13",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -20,6 +22,8 @@
     "ethers": "^5.5.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-helmet-async": "^1.1.2",
+    "react-hook-form": "^7.20.4",
     "react-router-dom": "^6.0.2",
     "react-scripts": "4.0.3",
     "typescript": "^4.1.2",
@@ -49,5 +53,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "devDependencies": {}
 }

@@ -1,10 +1,13 @@
 import React from "react";
 // hooks
-import { useWalletContext } from "../../hooks/wallet-context";
-// MUI
+import { useWalletContext } from "../../../hooks";
+// mui
 import { Button, Box, Typography, Modal } from "@mui/material";
 import PowerSettingsNewIcon from "@mui/icons-material/PowerSettingsNew";
 import { LoadingButton } from "@mui/lab";
+import { styled } from "@mui/material/styles";
+
+//----------------------------------------------------------------------
 
 const modalStyle = {
   position: "absolute" as "absolute",
@@ -19,14 +22,17 @@ const modalStyle = {
   p: 4,
 };
 
-const buttonContainerStyle = {
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  borderRadius: 5,
-  backgroundColor: "black",
-  boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
-};
+const AddressContainerStyle = styled(Box)(({ theme }) => ({
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 5,
+    backgroundColor: theme.palette.action.disabledBackground,
+    boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
+  }));
+  
+
+//----------------------------------------------------------------------
 
 export const ConnectWalletButton: React.FC = () => {
   const {
@@ -57,9 +63,9 @@ export const ConnectWalletButton: React.FC = () => {
   return (
     <>
       {displayName ? (
-        <Box style={buttonContainerStyle}>
-          <Typography fontSize={14} sx={{ mx: 3 }}>
-            {balance} LOOT
+        <AddressContainerStyle>
+          <Typography variant="overline" sx={{ mx: 3, lineHeight: 0 }}>
+            {balance} $LOOT
           </Typography>
           <Button
             sx={{ boxShadow: 0 }}
@@ -69,7 +75,7 @@ export const ConnectWalletButton: React.FC = () => {
           >
             {displayName}
           </Button>
-        </Box>
+        </AddressContainerStyle>
       ) : (
         <LoadingButton loading variant="contained">
           Loading...

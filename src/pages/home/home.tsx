@@ -1,10 +1,15 @@
-import React from 'react';
-import { Header } from '../../components';
+import React from "react";
+import { Navbar, Page } from "../../components";
+// mui
+import { Typography, Container } from "@mui/material";
 
 export const Home: React.FC = () => {
-    return (
-        <div>
-            <Header />
-        </div>
-    )
-}
+  return (
+    <Page title="Loot Lore - Write your adventure">
+      <Navbar />
+      <Container>
+          <Typography>Home</Typography>
+      </Container>
+    </Page>
+  );
+};

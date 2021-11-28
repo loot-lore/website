@@ -1,2 +1,3 @@
-export * from "./header";
-export * from "./connect-wallet-button";
+export * from "./navbar";
+export * from './page';
+export * from './entries';

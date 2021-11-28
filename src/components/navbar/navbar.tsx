@@ -1,7 +1,8 @@
-import * as React from "react";
+import React from "react";
+import { Link as RouterLink } from "react-router-dom";
 // Components
-import { ConnectWalletButton } from "../connect-wallet-button";
-// MUI
+import { ConnectWalletButton } from "./connect-wallet-button";
+// mui
 import {
   AppBar,
   Box,
@@ -15,9 +16,9 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 
-const pages = ["Products", "Pricing", "Blog"];
+const pages = ["Wiki", "Create entry"];
 
-export const Header: React.FC = () => {
+export const Navbar: React.FC = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
@@ -79,23 +80,17 @@ export const Header: React.FC = () => {
               ))}
             </Menu>
           </Box>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
-          >
-            Loot Lore
-          </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                {page}
-              </Button>
+              <RouterLink to="/create-entry">
+                <Button
+                  key={page}
+                  onClick={handleCloseNavMenu}
+                  sx={{ my: 2, color: "white", display: "block" }}
+                >
+                  {page}
+                </Button>
+              </RouterLink>
             ))}
           </Box>
 

@@ -3,7 +3,7 @@ import { ethers } from "ethers";
 import Web3Modal from "web3modal";
 import { shortenAddress } from "../utils";
 import { genericErc721Abi } from "../abis";
-import { contracts } from "../constants";
+import { LOOT_CONTRACT } from "../constants";
 
 const WEB3_MODAL_CONFIG = {
   network: "mainnet",
@@ -95,7 +95,7 @@ function useWallet() {
       const provider = new ethers.providers.Web3Provider(rawProvider);
       const signer = provider.getSigner();
       const lootContract = new ethers.Contract(
-        contracts.lootContract,
+        LOOT_CONTRACT,
         genericErc721Abi,
         provider
       );
